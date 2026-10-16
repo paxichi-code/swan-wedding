@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Анна & Михаил — приглашение на свадьбу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f7dfe3;--cream:#fbf5ec;--gold:#c9a96e;--taupe:#5e4b42}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--taupe);background:#e9d9cf;font-size:19px;line-height:1.5}
+.bg{position:fixed;inset:-40px;background:url(assets/hero.jpg) center/cover;filter:blur(24px) brightness(.95);z-index:-1}
+main{max-width:430px;margin:0 auto;background:var(--cream);box-shadow:0 0 60px rgba(0,0,0,.25);overflow:hidden}
+.hero{position:relative;height:100svh;min-height:640px;background:url(assets/hero.jpg) center/cover;text-align:center;display:flex;flex-direction:column;align-items:center;padding-top:30svh}
+.hero small{font-family:'Cormorant SC',serif;letter-spacing:.12em;font-size:18px}
+.hero h1{font-weight:500;font-size:52px;line-height:1.05;margin-top:22px;text-shadow:0 1px 12px #fff8}
+.scroll{position:absolute;bottom:28px;left:0;right:0;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px #0006}
+.scroll span{display:block;margin:6px auto 0;width:1px;height:38px;background:#fff;position:relative;animation:bob 2s infinite}
+.scroll span:after{content:"";position:absolute;bottom:0;left:-5px;width:9px;height:9px;border-right:1px solid #fff;border-bottom:1px solid #fff;transform:rotate(45deg)}
+@keyframes bob{50%{transform:translateY(6px)}}
+.petal{position:absolute;top:-20px;width:12px;height:9px;background:#f4b6c4;border-radius:12px 0;opacity:.8;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translate(60px,105svh) rotate(540deg)}}
+section{padding:56px 28px;text-align:center}
+section:nth-of-type(even){background:var(--pink)}
+h2{font-weight:500;font-size:36px;margin-bottom:6px}
+.div{display:block;width:200px;margin:4px auto 22px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;max-width:300px;margin:18px auto;font-size:16px}
+.cal b{font-weight:600;font-size:13px;color:var(--gold)}
+.cal .on{background:#e9a3b4;color:#fff;border-radius:50%}
+.cd{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.cd div{background:#fff;border:1px solid #ead7c0;border-radius:12px;width:66px;padding:8px 0}
+.cd strong{display:block;font-size:28px;font-weight:500}.cd small{font-size:13px}
+.btn{display:inline-block;margin-top:16px;padding:11px 26px;border:1px solid var(--gold);border-radius:30px;color:var(--taupe);text-decoration:none;background:#fff;font:inherit;cursor:pointer}
+.tl{text-align:left;max-width:300px;margin:0 auto;border-left:1px solid var(--gold);padding-left:22px}
+.tl li{list-style:none;position:relative;margin-bottom:20px}.tl li:before{content:"";position:absolute;left:-28px;top:8px;width:11px;height:11px;border-radius:50%;background:#e9a3b4;border:2px solid #fff}
+.tl time{font-weight:600;color:var(--gold)}
+.sw{display:flex;justify-content:center;gap:10px;margin-top:16px}.sw i{width:40px;height:40px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px #0002}
+form{text-align:left;max-width:320px;margin:0 auto}
+label{display:block;margin:14px 0 6px;font-weight:600}
+input[type=text]{width:100%;padding:10px 12px;border:1px solid #e0cdb5;border-radius:10px;font:inherit;background:#fff}
+.opt{display:block;font-weight:400;margin:4px 0}
+.thanks{display:none;font-size:22px}
+.note{font-size:13px;color:#a08b7c;font-style:italic}
+.music{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:#fffc;font-size:20px;cursor:pointer;z-index:9}
+.fade{opacity:0;transform:translateY(24px);transition:1s}.fade.in{opacity:1;transform:none}
+footer{padding:60px 28px 80px;text-align:center;background:var(--cream)}
+</style></head><body><div class="bg"></div>
+<main>
+<header class="hero" id="hero">
+ <small>Приглашение на свадьбу</small>
+ <!-- ЗАМЕНИТЕ имена -->
+ <h1>Анна<br>&amp;<br>Михаил</h1>
+ <div class="scroll">листайте вниз<span></span></div>
+</header>
+
+<section class="fade"><h2>Дорогие гости!</h2><img class="div" src="assets/rose.svg" alt="">
+<p>С огромной радостью приглашаем вас разделить с нами самый важный и счастливый день — день нашей свадьбы. Будем счастливы видеть вас рядом!</p></section>
+
+<section class="fade"><h2>Дата</h2><img class="div" src="assets/rose.svg" alt="">
+<p>Август 2027</p>
+<div class="cal" id="cal"></div>
+<p><b>15 августа 2027, воскресенье</b></p>
+<div class="cd"><div><strong id="d">0</strong><small>дней</small></div><div><strong id="h">0</strong><small>часов</small></div><div><strong id="m">0</strong><small>минут</small></div><div><strong id="s">0</strong><small>секунд</small></div></div></section>
+
+<section class="fade"><h2>Место</h2><img class="div" src="assets/rose.svg" alt="">
+<!-- ЗАМЕНИТЕ название, адрес и ссылку на карту -->
+<p><b>[Название площадки]</b><br>[Город, улица, дом]</p>
+<a class="btn" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть на карте</a></section>
+
+<section class="fade"><h2>Тайминг дня</h2><img class="div" src="assets/rose.svg" alt="">
+<ul class="tl"><li><time>15:00</time><br>Сбор гостей, welcome-фуршет</li><li><time>16:00</time><br>Церемония</li><li><time>17:00</time><br>Банкет</li><li><time>20:00</time><br>Торт</li><li><time>23:00</time><br>Завершение вечера</li></ul></section>
+
+<section class="fade"><h2>Дресс-код</h2><img class="div" src="assets/rose.svg" alt="">
+<p>Будем рады, если вы поддержите цветовую гамму нашего праздника в нежных пастельных оттенках.</p>
+<div class="sw"><i style="background:#f6d3da"></i><i style="background:#fbf1e2"></i><i style="background:#e7cfa6"></i><i style="background:#cfdcc6"></i><i style="background:#c9b6a6"></i></div></section>
+
+<section class="fade"><h2>Пожелания</h2><img class="div" src="assets/rose.svg" alt="">
+<p>Ваше присутствие — лучший подарок. Если хотите нас порадовать, будем благодарны за вклад в наш семейный бюджет в конверте.</p><p style="margin-top:12px">Пожалуйста, не дарите цветы — мы не успеем ими насладиться. Вместо букета можно подарить бутылочку любимого вина.</p></section>
+
+<section class="fade"><h2>Анкета гостя</h2><img class="div" src="assets/rose.svg" alt="">
+<p>Пожалуйста, подтвердите присутствие до 1 июля 2027</p>
+<form id="rsvp"><label>Имя и фамилия</label><input type="text" required placeholder="Ваше имя">
+<label>Присутствие</label><span class="opt"><input type="radio" name="a" required> С удовольствием приду</span><span class="opt"><input type="radio" name="a"> К сожалению, не смогу</span>
+<label>Напитки</label><span class="opt"><input type="checkbox"> Вино</span><span class="opt"><input type="checkbox"> Шампанское</span><span class="opt"><input type="checkbox"> Крепкие напитки</span><span class="opt"><input type="checkbox"> Безалкогольные</span>
+<div style="text-align:center"><button class="btn">Отправить</button></div></form>
+<p class="thanks" id="thx">Спасибо! Ваш ответ получен ♡</p>
+<!-- Форма работает только в браузере. Для сбора ответов подключите Google Forms / Formspree и т.п. -->
+</section>
+
+<section class="fade"><h2>Контакты</h2><img class="div" src="assets/rose.svg" alt="">
+<!-- ЗАМЕНИТЕ контакты -->
+<p>По всем вопросам — наш организатор<br><b>[Имя организатора]</b><br><a href="tel:+70000000000" style="color:inherit">+7 (000) 000-00-00</a></p></section>
+
+<footer class="fade"><img class="div" src="assets/rose.svg" alt=""><h2>Ждём вас!</h2><p>С любовью,<br>Анна &amp; Михаил</p></footer>
+</main>
+<!-- Музыка: положите файл в assets/music.mp3 и укажите src="assets/music.mp3" -->
+<audio id="au" loop src=""></audio>
+<button class="music" id="mb" aria-label="Музыка">♪</button>
+<script>
+const W=new Date('2027-08-15T16:00:00+03:00'); // ЗАМЕНИТЕ дату/время церемонии
+const c=document.getElementById('cal');'Пн Вт Ср Чт Пт Сб Вс'.split(' ').forEach(x=>c.innerHTML+='<b>'+x+'</b>');
+const off=(new Date(2027,7,1).getDay()+6)%7;for(let i=0;i<off;i++)c.innerHTML+='<span></span>';
+for(let i=1;i<=31;i++)c.innerHTML+='<span class="'+(i==15?'on':'')+'">'+i+'</span>';
+function t(){let s=Math.max(0,(W-new Date())/1e3|0);d.textContent=s/86400|0;h.textContent=s%86400/3600|0;m.textContent=s%3600/60|0;document.getElementById('s').textContent=s%60}t();setInterval(t,1000);
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.15});document.querySelectorAll('.fade').forEach(x=>io.observe(x));
+const hero=document.getElementById('hero');for(let i=0;i<14;i++){const p=document.createElement('i');p.className='petal';p.style.left=Math.random()*100+'%';p.style.animationDuration=8+Math.random()*8+'s';p.style.animationDelay=-Math.random()*16+'s';hero.appendChild(p)}
+rsvp.onsubmit=e=>{e.preventDefault();rsvp.style.display='none';thx.style.display='block'};
+mb.onclick=()=>{if(!au.getAttribute('src'))return;au.paused?au.play():au.pause();mb.style.opacity=au.paused?.6:1};
+</script></body></html>
